@@ -19,12 +19,12 @@ const getWeatherData = async (city) => {
     // console.log(data.list[0].clouds.all)
     if(hora >= 06 && hora < 20) {
 
-        if(data.list[0].clouds.all === 0){
+        if(data.list[0].clouds.all < 40){
             document.getElementById('container').style.backgroundImage = await 'url("https://i.postimg.cc/NfS4r0CP/soleado.jpg")'
             document.getElementById('container').style.backgroundSize = 'cover'
             document.getElementById('container').style.backgroundPosition = 'center'
 
-        } else if(data.list[0].clouds.all > 40){
+        } else if(data.list[0].clouds.all >= 40){
             document.getElementById('container').style.backgroundImage = await 'url("https://i.postimg.cc/DwCbbpzf/parcial.jpg")'
             document.getElementById('container').style.backgroundSize = 'cover'
             document.getElementById('container').style.backgroundPosition = 'center'
@@ -60,5 +60,5 @@ const getWeatherData = async (city) => {
 }
 
 window.onload = () => {
-    getWeatherData('Salto')
+    getWeatherData('montevideo')
 }
