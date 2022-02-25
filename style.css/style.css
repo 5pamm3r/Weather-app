@@ -10,17 +10,17 @@ body {
   font: var(--headline-headline2);
   background-color: var(--white); }
 
-.main {
+.section {
   display: grid;
   place-items: center; }
-  .main .container {
+  .section .container {
     position: relative;
     display: flex;
     justify-content: center;
     width: 450px;
     height: 600px;
     border-radius: 15px; }
-    .main .container .time {
+    .section .container .time {
       position: absolute;
       display: flex;
       justify-content: space-between;
@@ -30,7 +30,7 @@ body {
       bottom: 30px;
       border-radius: 15px;
       background: var(--gradient); }
-    .main .container .div-temp input {
+    .section .container .div-temp input {
       width: 60px;
       height: 40px;
       margin-left: 30px;
@@ -39,7 +39,7 @@ body {
       font-weight: bold;
       font-size: 2rem;
       color: var(--white); }
-    .main .container .div-date input {
+    .section .container .div-date input {
       width: 100px;
       height: 30px;
       background-color: transparent;
