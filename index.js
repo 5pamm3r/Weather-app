@@ -1,32 +1,64 @@
-function sunny (data, background) {
-    if(data.list[0].clouds.all < 40){
+function sunny (el, background) {
+    if(el.weather[0].main === 'Clear'){
         background('url("https://i.postimg.cc/NfS4r0CP/soleado.jpg")')
 
-    } else if(data.list[0].clouds.all >= 40){
+    } else if(el.weather[0].main === 'Clouds'){
         background('url("https://i.postimg.cc/DwCbbpzf/parcial.jpg")')
         
-    } else if(data.list[0].rain != null){
+    } else if(el.weather[0].main === 'Rain'){
         background('url("https://i.postimg.cc/fWxtvRbr/lluvioso.jpg")')
         
-    } else if(data.list[0].wind.speed > 40){
+    } else if(el.wind.speed > 40){
         background('url("https://i.postimg.cc/GhK4ZgGP/viento.jpg")')
         
     }
 }
 
-function night (data, background) {
-    if(data.list[0].clouds.all < 40){
+function night (el, background) {
+    if(el.weather[0].main === 'Clear'){
         background('url("https://i.postimg.cc/0NMrK83Z/noche-despejado.jpg")')
 
-    } else if(data.list[0].clouds.all > 40){
+    } else if(el.weather[0].main === 'Clouds'){
         background('url("https://i.postimg.cc/MGCHyCJw/noche-parcial.jpg")')
         
-    } else if(data.list[0].rain != null){
+    } else if(el.weather[0].main === 'Rain'){
         background('url("https://i.postimg.cc/Qx8tkgwF/noche-lluvioso.jpg")')
         
-    } else if(data.list[0].wind.speed > 40){
+    } else if(el.wind.speed > 40){
         background('url("https://i.postimg.cc/C1Chbd4C/noche-viento.jpg")')
         
+    }
+}
+
+const search = document.getElementById('search__form')
+search.addEventListener('submit', e=>{
+    e.preventDefault()
+    const searchInput = document.getElementById('search__input')
+    getWeatherData(searchInput.value)
+
+})
+
+const makeInputs = (data) =>{
+    const date = new Date(data.dt*1000).toLocaleString('es-ES', {
+        dateStyle: 'medium'
+    })
+    document.getElementById('input-temp').value = `${Math.floor(data.main.temp)}°`;
+    document.getElementById('input-date').value = date;
+    document.getElementById('input-city').value = `${data.name} ,${data.sys.country}`
+}
+
+const background = (img) => {
+    document.getElementById('container').style.backgroundImage = img
+    document.getElementById('container').style.backgroundSize = 'cover'
+    document.getElementById('container').style.backgroundPosition = 'center'
+}
+
+const changeBack = (el, background) => {
+    const dayHour = new Date(el.dt*1000).getHours();    
+    if(dayHour >= 06 && dayHour < 19) {
+        sunny(el, background)
+    } else {
+        night(el, background)
     }
 }
 
@@ -36,26 +68,15 @@ const getWeatherData = async (city) => {
             "x-rapidapi-host": "community-open-weather-map.p.rapidapi.com",
             "x-rapidapi-key": "3e3e6304f0mshe71eb2622fc0338p114ee1jsn7d5ecdc73032"}});
     const data =  await res.json();
-    const date = new Date(data.list[0].dt*1000)
-    const hora = String(date).slice(16,18)
-    
-    document.getElementById('input-temp').value = `${data.list[0].main.temp}°`;
-    document.getElementById('input-date').value = String(date).slice(4,15);
-    document.getElementById('input-city').value = `${data.list[0].name} ,${data.list[0].sys.country}`
+    // console.log(data)
 
-    const background = async (img) => {
-        document.getElementById('container').style.backgroundImage = await img
-        document.getElementById('container').style.backgroundSize = 'cover'
-        document.getElementById('container').style.backgroundPosition = 'center'
-    }
-
-    if(hora >= 06 && hora < 19) {
-        sunny(data, background)
-    } else {
-        night(data, background)
-    }
+    data.list.forEach(el=>{
+        if(el.sys.country === 'UY'){
+            makeInputs(el)
+            changeBack(el, background)
+        }
+    })
 }
-
 
 
 window.onload = () => {
