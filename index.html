@@ -11,20 +11,21 @@
     <section class="section">
         <div class="container" id="container">
             <form id="search__form" class="search__form">
-                <input type="text" id="search__input" name="input__search" required placeholder="Ingrese localidad..."> 
+                <input type="text" id="search__input" required placeholder=" Ingrese localidad ..."> 
             </form>
             <div class="time">
-                <div class="div-temp">
-                    <input type="text" id="input-temp" readonly>
+                <div class="div__date">
+                    <div>
+                        <input type="text" id="input__date" readonly>
+                    </div>
+                    <div class="city">
+                        <img src="icons/map-pin.svg" class="icon__city" alt="Icono de la ciudad"></img>
+                        <input type="text" id="input__city" readonly>
+                    </div>
                 </div>
-                <div class="div-date">
-                    <div>
-                        <input type="text" id="input-date" readonly>
-                    </div>
-                    <div>
-                        <span class="icon-city"></span>
-                        <input type="text" id="input-city" readonly>
-                    </div>
+                <div class="div__temp">
+                    <input type="text" id="input__temp" readonly>
+                    <img alt="Icono estado del tiempo" class="icon__temp" id="icon__temp">
                 </div>
             </div>
         </div>
