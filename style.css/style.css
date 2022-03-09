@@ -1,7 +1,12 @@
 :root {
   --white: #eff0f3;
-  --gradient: linear-gradient(0deg, #536976 0%, #292e49 100%);
+  --gradient: linear-gradient(-20deg, #536976 0%, #292e49 100%);
   --headline-headline2: 700 1.125rem/normal Nunito; }
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0; }
 
 html {
   font-size: 62.5%; }
@@ -17,7 +22,7 @@ body {
     position: relative;
     display: flex;
     justify-content: center;
-    width: 450px;
+    width: 360px;
     height: 600px;
     border-radius: 15px; }
     .section .container .search__form {
@@ -32,27 +37,41 @@ body {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      width: 220px;
+      width: 250px;
       height: 90px;
       bottom: 30px;
       border-radius: 15px;
       background: var(--gradient); }
-    .section .container .div-temp input {
-      width: 60px;
-      height: 40px;
-      margin-left: 30px;
-      text-align: center;
-      background-color: transparent;
-      border: none;
-      font-weight: bold;
-      font-size: 2rem;
-      color: var(--white); }
-    .section .container .div-date input {
-      width: 100px;
-      height: 30px;
-      background-color: transparent;
-      border: none;
-      text-transform: uppercase;
-      font-weight: bold;
-      color: var(--white);
-      font-size: 1.5rem; }
+    .section .container .div__temp {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center; }
+      .section .container .div__temp img {
+        width: 40px; }
+      .section .container .div__temp input {
+        width: 100px;
+        height: 40px;
+        text-align: center;
+        background-color: transparent;
+        border: none;
+        font-weight: bold;
+        font-size: 4rem;
+        color: var(--white); }
+    .section .container .div__date {
+      margin-left: 10px;
+      text-align: center; }
+      .section .container .div__date .city {
+        display: flex; }
+        .section .container .div__date .city .icon__city {
+          width: 14px;
+          margin-right: 5px;
+          filter: brightness(4.25); }
+      .section .container .div__date input {
+        width: 120px;
+        height: 30px;
+        background-color: transparent;
+        border: none;
+        font-weight: bold;
+        color: var(--white);
+        font-size: 1.4rem; }
