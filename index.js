@@ -68,21 +68,24 @@ const iconTemp = (codeIcon) => {
 }
 
 const getWeatherData = async (city) => {
-    const res = await fetch(`https://community-open-weather-map.p.rapidapi.com/find?q=${city}&units=metric&lang=sp`, {
-        "headers": {
-            "x-rapidapi-host": "community-open-weather-map.p.rapidapi.com",
-            "x-rapidapi-key": "3e3e6304f0mshe71eb2622fc0338p114ee1jsn7d5ecdc73032"}});
-    const data =  await res.json();
+        try{
 
-    data.list.forEach(el=>{
-        if(el.sys.country === 'UY'){
-            makeInputs(el)
-            changeBack(el, background)
-            iconTemp(el.weather[0].icon)
+            const res = await fetch(`https://community-open-weather-map.p.rapidapi.com/find?q=${city}&units=metric&lang=sp`, {
+                "headers": {
+                    "x-rapidapi-host": "community-open-weather-map.p.rapidapi.com",
+                    "x-rapidapi-key": "3e3e6304f0mshe71eb2622fc0338p114ee1jsn7d5ecdc73032"}});
+            const data =  await res.json();
+            console.log(data)
+            data.list.forEach(el=>{
+                if(el.sys.country === 'UY'){
+                    makeInputs(el)
+                    changeBack(el, background)
+                    iconTemp(el.weather[0].icon)
+                }
+            })
+        } catch(err){
+            console.error(err)
         }
-    })
-
-
 }
 
 
