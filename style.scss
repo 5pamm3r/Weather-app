@@ -76,8 +76,10 @@ body {
             text-align: center;
             .city{
                 display: flex;
+                align-items: center;
                 .icon__city{
                     width: 14px;
+                    height: 14px;
                     margin-right: 5px;
                     filter: brightness(4.25);
                 }

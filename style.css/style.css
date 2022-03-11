@@ -62,9 +62,11 @@ body {
       margin-left: 10px;
       text-align: center; }
       .section .container .div__date .city {
-        display: flex; }
+        display: flex;
+        align-items: center; }
         .section .container .div__date .city .icon__city {
           width: 14px;
+          height: 14px;
           margin-right: 5px;
           filter: brightness(4.25); }
       .section .container .div__date input {
