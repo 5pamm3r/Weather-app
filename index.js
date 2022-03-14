@@ -73,7 +73,9 @@ const getWeatherData = async (city) => {
             const res = await fetch(`https://community-open-weather-map.p.rapidapi.com/find?q=${city}&units=metric&lang=sp`, {
                 "headers": {
                     "x-rapidapi-host": "community-open-weather-map.p.rapidapi.com",
-                    "x-rapidapi-key": "3e3e6304f0mshe71eb2622fc0338p114ee1jsn7d5ecdc73032"}});
+                    "x-rapidapi-key": "03180f7dcemsh85b598425ef8801p16815ajsnb73ba7cd518c"}});
+
+            
             const data =  await res.json();
             console.log(data)
             data.list.forEach(el=>{
