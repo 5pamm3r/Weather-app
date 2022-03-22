@@ -1,6 +1,7 @@
 {
+  "type": "module",
   "scripts": {
-    "scss": "node-sass --watch style.scss -o style.css",
+    "scss": "node-sass --watch style/style.scss -o style.css",
     "start": "live-server"
   },
   "dependencies": {
