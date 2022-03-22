@@ -9,6 +9,7 @@ const getWeatherData = async (city) => {
                     "x-rapidapi-host": "community-open-weather-map.p.rapidapi.com",
                     "x-rapidapi-key": "03180f7dcemsh85b598425ef8801p16815ajsnb73ba7cd518c"}})
             const data =  await res.json()
+            console.log(data)
             data.list.forEach(el => {
                 if (el.sys.country === 'UY') {
                     createInputs(el)
