@@ -1,7 +1,7 @@
 :root {
   --white: #eff0f3;
   --gradient: linear-gradient(-20deg, #536976 0%, #292e49 100%);
-  --headline-headline2: 700 1.125rem/normal Nunito; }
+  --headline-headline2: 700 1.125rem / normal Nunito; }
 
 * {
   box-sizing: border-box;
@@ -18,21 +18,45 @@ body {
 .section {
   display: grid;
   place-items: center; }
-  .section .container {
-    position: relative;
+  .section .main__container {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    background: radial-gradient(circle, #ababf7 0%, #00d4ff 100%);
     width: 360px;
     height: 600px;
-    border-radius: 15px; }
-    .section .container .search__form {
+    border-radius: 15px;
+    align-items: center;
+    justify-content: space-evenly; }
+    .section .main__container .input {
+      background-color: transparent;
+      border: none; }
+    .section .main__container .country__input {
+      text-align: center;
+      color: white;
+      font-weight: bold;
+      font-size: 2.8rem; }
+    .section .main__container .weather__logo {
+      width: 200px;
+      height: 200px; }
+    .section .main__container .temp__input {
+      text-align: center;
+      color: white;
+      font-size: 12rem;
+      font-weight: bold; }
+    .section .main__container .description {
+      color: white;
+      font-weight: bold;
+      font-size: 2.5rem;
+      text-align: center; }
+    .section .main__container .search__form {
       margin-top: 20px; }
-      .section .container .search__form input {
+      .section .main__container .search__form input {
         border: none;
         opacity: 0.5;
         border-radius: 5px;
         font-size: 2rem; }
-    .section .container .time {
+    .section .main__container .time {
       position: absolute;
       display: flex;
       justify-content: space-between;
@@ -42,14 +66,14 @@ body {
       bottom: 30px;
       border-radius: 15px;
       background: var(--gradient); }
-    .section .container .div__temp {
+    .section .main__container .div__temp {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       align-items: center; }
-      .section .container .div__temp img {
+      .section .main__container .div__temp img {
         width: 40px; }
-      .section .container .div__temp input {
+      .section .main__container .div__temp input {
         width: 100px;
         height: 40px;
         text-align: center;
@@ -58,18 +82,18 @@ body {
         font-weight: bold;
         font-size: 4rem;
         color: var(--white); }
-    .section .container .div__date {
+    .section .main__container .div__date {
       margin-left: 10px;
       text-align: center; }
-      .section .container .div__date .city {
+      .section .main__container .div__date .city {
         display: flex;
         align-items: center; }
-        .section .container .div__date .city .icon__city {
+        .section .main__container .div__date .city .icon__city {
           width: 14px;
           height: 14px;
           margin-right: 5px;
           filter: brightness(4.25); }
-      .section .container .div__date input {
+      .section .main__container .div__date input {
         width: 120px;
         height: 30px;
         background-color: transparent;
