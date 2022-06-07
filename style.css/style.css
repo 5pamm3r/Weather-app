@@ -15,89 +15,95 @@ body {
   font: var(--headline-headline2);
   background-color: var(--white); }
 
-.section {
-  display: grid;
-  place-items: center; }
-  .section .main__container {
+.container {
+  margin: 0 auto;
+  width: 400px;
+  background: radial-gradient(circle, #041421 0%, #08192b 100%); }
+  .container .main__container {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    margin: 0 auto;
+    gap: 5px;
     background: radial-gradient(circle, #ababf7 0%, #00d4ff 100%);
     width: 360px;
     height: 600px;
-    border-radius: 15px;
+    border-radius: 20px;
     align-items: center;
     justify-content: space-evenly; }
-    .section .main__container .input {
+    .container .main__container .input {
       background-color: transparent;
       border: none; }
-    .section .main__container .country__input {
+    .container .main__container .country__input {
       text-align: center;
       color: white;
       font-weight: bold;
       font-size: 2.8rem; }
-    .section .main__container .weather__logo {
+    .container .main__container .weather__logo {
       width: 200px;
       height: 200px; }
-    .section .main__container .temp__input {
+    .container .main__container .temp__input {
       text-align: center;
+      max-width: 300px;
       color: white;
       font-size: 12rem;
       font-weight: bold; }
-    .section .main__container .description {
+    .container .main__container .description {
       color: white;
       font-weight: bold;
       font-size: 2.5rem;
       text-align: center; }
-    .section .main__container .search__form {
-      margin-top: 20px; }
-      .section .main__container .search__form input {
-        border: none;
-        opacity: 0.5;
-        border-radius: 5px;
-        font-size: 2rem; }
-    .section .main__container .time {
-      position: absolute;
+    .container .main__container .date__input {
+      color: white;
+      text-align: center;
+      font-size: 1.5rem; }
+    .container .main__container .today__container {
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      width: 250px;
-      height: 90px;
-      bottom: 30px;
-      border-radius: 15px;
-      background: var(--gradient); }
-    .section .main__container .div__temp {
+      width: 100%;
+      justify-content: space-evenly;
+      border-top: 1px solid #6ac5ff;
+      padding-top: 20px; }
+    .container .main__container .item__container {
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
       align-items: center; }
-      .section .main__container .div__temp img {
-        width: 40px; }
-      .section .main__container .div__temp input {
-        width: 100px;
-        height: 40px;
-        text-align: center;
-        background-color: transparent;
-        border: none;
-        font-weight: bold;
-        font-size: 4rem;
-        color: var(--white); }
-    .section .main__container .div__date {
-      margin-left: 10px;
+    .container .main__container .item__container-logo {
+      width: 30px; }
+    .container .main__container .item__container-text {
+      background: transparent;
+      color: white;
+      border: none;
+      font-weight: bold;
+      width: 100px;
       text-align: center; }
-      .section .main__container .div__date .city {
+    .container .main__container .item__container-description {
+      background: transparent;
+      color: #e8e5f1;
+      font-weight: bold;
+      border: none;
+      text-align: center;
+      width: 100px; }
+  .container .footer__container {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 20px; }
+    .container .footer__container .subtitle__container {
+      display: flex;
+      justify-content: space-between;
+      margin: 20px; }
+      .container .footer__container .subtitle__container .subtitle {
+        font-size: 2rem; }
+      .container .footer__container .subtitle__container .view__more {
+        font-size: 1.5rem; }
+    .container .footer__container .timeLapsItem__container {
+      display: flex;
+      justify-content: space-evenly; }
+      .container .footer__container .timeLapsItem__container .item__container {
         display: flex;
-        align-items: center; }
-        .section .main__container .div__date .city .icon__city {
-          width: 14px;
-          height: 14px;
-          margin-right: 5px;
-          filter: brightness(4.25); }
-      .section .main__container .div__date input {
-        width: 120px;
-        height: 30px;
-        background-color: transparent;
-        border: none;
-        font-weight: bold;
-        color: var(--white);
-        font-size: 1.4rem; }
+        flex-direction: column;
+        align-items: center;
+        border: 1px solid white;
+        border-radius: 20px;
+        padding: 10px; }
+        .container .footer__container .timeLapsItem__container .item__container .hour__item {
+          color: gray; }
