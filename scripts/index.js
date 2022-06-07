@@ -1,9 +1,6 @@
-import {
-  background,
-  changeBackground,
-  iconTemp,
-  mainInputs,
-} from "./design.js";
+import { background, changeBackground, iconTemp } from "./design.js";
+import { mainContainer } from "./mainContainer/index.js";
+import { footerContainer } from "./footerContainer/index.js";
 
 const getWeatherData = async (city) => {
   try {
@@ -18,19 +15,18 @@ const getWeatherData = async (city) => {
     //   }
     // );
     // const data = await res.json();
-    // console.log(data); 
+    // console.log(data);
     // data.list.map((i)=>{
     //   if(i.sys.country === 'UY') {
-    //     mainInputs(i)
-    //     // changeBackground(i, background)
     //     // iconTemp(i.weather[0].icon)
     //   }
     // })
-    mainInputs()
+    mainContainer();
+    footerContainer();
   } catch (err) {
     console.error(err);
   }
-}; 
+};
 
 document.body.addEventListener("submit", (e) => {
   if (e.target.id === "search__form") {
