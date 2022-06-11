@@ -31,7 +31,17 @@ body {
     max-width: 450px;
     border-radius: 20px;
     align-items: center;
-    padding: 20px 0; }
+    padding: 20px 0;
+    position: relative; }
+    .container .main__container .back__button {
+      display: none;
+      background: transparent;
+      color: white;
+      font-size: 3rem;
+      border: none;
+      position: absolute;
+      left: 0;
+      top: 0; }
     .container .main__container .span {
       background-color: transparent;
       border: none; }
