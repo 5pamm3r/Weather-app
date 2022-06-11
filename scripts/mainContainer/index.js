@@ -18,12 +18,12 @@ const mainContainer = (data) => {
   // tempInput.value = `${Math.floor(data.main.temp)}°`
   // description.value = data.weather[0].description
   // dateInput.value = date
-  countryInput.value = "Uruguay";
+  countryInput.textContent = "Uruguay";
   weatherLogo.src =
     "https://img.icons8.com/office/80/undefined/chance-of-storm.png";
-  tempInput.value = "20°";
-  description.value = "Thunderstorm";
-  dateInput.value = "Saturday 04 May";
+  tempInput.textContent = "20°";
+  description.textContent = "Thunderstorm";
+  dateInput.textContent = "Saturday 04 May";
 
   itemsTodayContainer(
     "https://img.icons8.com/office/30/undefined/wind--v1.png",

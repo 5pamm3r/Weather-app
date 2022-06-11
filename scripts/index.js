@@ -1,7 +1,5 @@
-import { background, changeBackground, iconTemp } from "./design.js";
 import { mainContainer } from "./mainContainer/index.js";
 import { footerContainer } from "./footerContainer/index.js";
-
 const getWeatherData = async (city) => {
   try {
     // const res = await fetch(
@@ -23,6 +21,7 @@ const getWeatherData = async (city) => {
     // })
     mainContainer();
     footerContainer();
+    // nextDays(data);
   } catch (err) {
     console.error(err);
   }

@@ -1,7 +1,7 @@
 const container = document.querySelector("#footerContainer");
 const subtitleContainer = document.createElement("div");
 const subtitle = document.createElement("span");
-const viewMore = document.createElement("span");
+const viewMore = document.createElement("button");
 const viewLogo = document.createElement("img");
 
 subtitleContainer.setAttribute("class", "subtitle__container");

@@ -1,18 +1,18 @@
 const mainContainer = document.querySelector("#mainContainer");
 // const searchForm = document.createElement('form')
 // const searchInput = document.createElement('input')
-const countryInput = document.createElement("input");
+const countryInput = document.createElement("span");
 const weatherLogo = document.createElement("img");
-const tempInput = document.createElement("input");
-const description = document.createElement("input");
-const dateInput = document.createElement("input");
+const tempInput = document.createElement("span");
+const description = document.createElement("span");
+const dateInput = document.createElement("span");
 const infoContainer = document.createElement("div");
 const todayContainer = document.createElement("div");
-countryInput.className = "country__input input";
+countryInput.className = "country span";
 weatherLogo.className = "weather__logo";
-tempInput.className = "temp__input input";
-description.className = "description input";
-dateInput.className = "date__input input";
+tempInput.className = "temperature span";
+description.className = "description span";
+dateInput.className = "date span";
 todayContainer.className = "today__container";
 mainContainer.append(
   countryInput,
