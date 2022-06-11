@@ -1,6 +1,9 @@
 const mainContainer = document.querySelector("#mainContainer");
 // const searchForm = document.createElement('form')
 // const searchInput = document.createElement('input')
+const backBtn = document.createElement('button')
+backBtn.setAttribute('class','back__button')
+backBtn.textContent = '<'
 const countryInput = document.createElement("span");
 const weatherLogo = document.createElement("img");
 const tempInput = document.createElement("span");
@@ -27,6 +30,7 @@ mainContainer.append(
 
 export {
   mainContainer,
+  backBtn,
   countryInput,
   weatherLogo,
   tempInput,

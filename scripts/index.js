@@ -1,4 +1,4 @@
-import { mainContainer } from "./mainContainer/index.js";
+import { main } from "./mainContainer/index.js";
 import { footerContainer } from "./footerContainer/index.js";
 const getWeatherData = async (city) => {
   try {
@@ -19,7 +19,7 @@ const getWeatherData = async (city) => {
     //     // iconTemp(i.weather[0].icon)
     //   }
     // })
-    mainContainer();
+    main();
     footerContainer();
     // nextDays(data);
   } catch (err) {

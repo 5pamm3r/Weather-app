@@ -1,4 +1,6 @@
 import {
+  backBtn,
+  mainContainer,
   countryInput,
   weatherLogo,
   tempInput,
@@ -7,8 +9,46 @@ import {
   infoContainer,
   todayContainer,
 } from "./indexUI.js";
+import { container } from "../footerContainer/indexUI.js";
 import { itemsContainer, itemsTodayContainer } from "./itemsTodayContainer.js";
-const mainContainer = (data) => {
+
+backBtn.addEventListener('click',() => {
+  mainContainer.classList.remove('main__container-reduce')
+  container.classList.remove('footer__container-deploy')
+  const ref = document.querySelector('#weatherContainer')
+  ref.remove()
+  
+  countryInput.insertAdjacentElement('afterend', weatherLogo)
+  weatherLogo.insertAdjacentElement('afterend', infoContainer)
+  const containerItems = document.querySelector('#containerItems')
+  containerItems.remove()
+
+  countryInput.style.display = 'block'
+  tempInput.style.display = 'block'
+  description.style.display = 'block'
+  dateInput.style.display = 'block'
+  const subtitleContainer = document.querySelector('#subtitleContainer')
+  subtitleContainer.style.display = 'flex'
+  const timeLapsItemContainer = document.querySelector('#timeLapsItemContainer')
+  timeLapsItemContainer.style.display = 'flex'
+  infoContainer.append(tempInput, description)
+
+  // const weatherContainer = document.createElement('div')
+  // weatherContainer.style.display = 'flex'
+  // const infoContainer = document.createElement('div')
+  // infoContainer.append('Tommorow', tempInput, description )
+  // infoContainer.style.display = 'flex'
+  // infoContainer.style.flexDirection = 'column'
+  // weatherContainer.append(weatherLogo, infoContainer)
+  // weatherContainer.style.display = 'flex'
+  // mainContainer.insertAdjacentElement('afterbegin', weatherContainer)
+  // const sectionContainer = document.querySelector('#container')
+  // sectionContainer.style.height = '100vh'
+  // mainContainer.insertAdjacentElement('afterbegin',backBtn)
+  // backBtn.style.display = 'block'
+})
+
+const main = (data) => {
   // const date = new Date(data.dt * 1000).toLocaleString("es-ES", {
   //   dateStyle: "medium",
   // });
@@ -51,4 +91,4 @@ const mainContainer = (data) => {
   // ).value = `${data.name}, ${data.sys.country}`;
 };
 
-export { mainContainer };
+export { main };

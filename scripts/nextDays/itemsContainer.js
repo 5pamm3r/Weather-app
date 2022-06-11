@@ -1,5 +1,6 @@
 const containerItems = document.createElement('div')
 containerItems.setAttribute('class','items__container')
+containerItems.setAttribute('id','containerItems')
 
 let itemsContainer = (data) => {
   const itemContainer = document.createElement('div')

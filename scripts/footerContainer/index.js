@@ -3,7 +3,7 @@ import { nextDays } from "../nextDays/index.js";
 import { container, subtitleContainer, subtitle, viewMore } from "./indexUI.js";
 import { itemsContainer, timeLaps } from "./timeLaps.js";
 
-import { mainContainer, countryInput, weatherLogo, tempInput, description, dateInput } from "../mainContainer/indexUI.js";
+import { mainContainer, backBtn, countryInput, weatherLogo, tempInput, description, dateInput } from "../mainContainer/indexUI.js";
 
 
 const footerContainer = () => {
@@ -21,6 +21,7 @@ const footerContainer = () => {
     timeLapsItemContainer.style.display = 'none'
     
     const weatherContainer = document.createElement('div')
+    weatherContainer.setAttribute('id','weatherContainer')
     weatherContainer.style.display = 'flex'
     const infoContainer = document.createElement('div')
     infoContainer.append('Tommorow', tempInput, description )
@@ -31,6 +32,8 @@ const footerContainer = () => {
     mainContainer.insertAdjacentElement('afterbegin', weatherContainer)
     const sectionContainer = document.querySelector('#container')
     sectionContainer.style.height = '100vh'
+    mainContainer.insertAdjacentElement('afterbegin',backBtn)
+    backBtn.style.display = 'block'
   })
   subtitleContainer.append(subtitle, viewMore);
 
@@ -57,6 +60,7 @@ const footerContainer = () => {
 
   const timeLapsItemContainer = document.createElement("div");
   timeLapsItemContainer.setAttribute("class", "timeLapsItem__container");
+  timeLapsItemContainer.setAttribute('id','timeLapsItemContainer')
   timeLapsItemContainer.append(...itemsContainer);
   container.append(subtitleContainer, timeLapsItemContainer);
 };
