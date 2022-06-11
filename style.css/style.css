@@ -16,24 +16,26 @@ body {
   background-color: var(--white); }
 
 .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   margin: 0 auto;
-  width: 400px;
+  min-width: 360px;
   background: radial-gradient(circle, #041421 0%, #08192b 100%); }
   .container .main__container {
     display: flex;
     flex-direction: column;
-    margin: 0 auto;
-    gap: 5px;
+    margin: 0 10px;
+    gap: 10px;
     background: radial-gradient(circle, #ababf7 0%, #00d4ff 100%);
-    width: 360px;
-    height: 600px;
+    max-width: 450px;
     border-radius: 20px;
     align-items: center;
-    justify-content: space-evenly; }
-    .container .main__container .input {
+    padding: 20px 0; }
+    .container .main__container .span {
       background-color: transparent;
       border: none; }
-    .container .main__container .country__input {
+    .container .main__container .country {
       text-align: center;
       color: white;
       font-weight: bold;
@@ -41,7 +43,7 @@ body {
     .container .main__container .weather__logo {
       width: 200px;
       height: 200px; }
-    .container .main__container .temp__input {
+    .container .main__container .temperature {
       text-align: center;
       max-width: 300px;
       color: white;
@@ -52,7 +54,7 @@ body {
       font-weight: bold;
       font-size: 2.5rem;
       text-align: center; }
-    .container .main__container .date__input {
+    .container .main__container .date {
       color: white;
       text-align: center;
       font-size: 1.5rem; }
@@ -84,13 +86,12 @@ body {
       width: 100px; }
   .container .footer__container {
     color: white;
-    display: flex;
-    flex-direction: column;
-    padding-bottom: 20px; }
+    padding-bottom: 20px;
+    max-width: 470px; }
     .container .footer__container .subtitle__container {
       display: flex;
       justify-content: space-between;
-      margin: 20px; }
+      margin: 20px 10px; }
       .container .footer__container .subtitle__container .subtitle {
         font-size: 2rem; }
       .container .footer__container .subtitle__container .view__more {
@@ -107,3 +108,34 @@ body {
         padding: 10px; }
         .container .footer__container .timeLapsItem__container .item__container .hour__item {
           color: gray; }
+    .container .footer__container .items__container {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      height: 100%; }
+      .container .footer__container .items__container .item__container {
+        display: flex;
+        justify-content: space-between;
+        margin: 10px; }
+  .container .main__container-reduce {
+    gap: 5px; }
+  .container .footer__container-deploy {
+    height: 100%; }
+
+@media (min-width: 470px) {
+  .container .main__container, .container .footer__container {
+    margin: 0 auto;
+    width: 450px; } }
+
+@media (max-width: 600px) and (min-height: 800px) {
+  .container {
+    height: 100vh; }
+    .container .main__container {
+      gap: 30px; }
+    .container .main__container-reduce {
+      gap: 5px; } }
+
+@media (min-width: 800px) {
+  .container {
+    flex-direction: row;
+    height: 100vh; } }
