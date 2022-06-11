@@ -1,98 +1,186 @@
-:root { 
-    --white: #eff0f3; 
-    --gradient: linear-gradient(-20deg, #536976 0%, #292e49 100%); 
-    --headline-headline2: 700 1.125rem/normal Nunito; 
+:root {
+  --white: #eff0f3;
+  --gradient: linear-gradient(-20deg, #536976 0%, #292e49 100%);
+  --headline-headline2: 700 1.125rem / normal Nunito;
 }
 
-*{
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
-html{
-    font-size: 62.5%;
+html {
+  font-size: 62.5%;
 }
 
 body {
-    font: var(--headline-headline2);
-    background-color: var(--white);
+  font: var(--headline-headline2);
+  background-color: var(--white);
 }
 
-.section{
-    display: grid;
-    place-items: center;
-    .container {
-        position: relative;
-        display: flex;
-        justify-content: center;
-        width: 360px;
-        height: 600px;
-        border-radius: 15px;
-        .search__form{
-            margin-top: 20px;
-            input {
-                border: none;
-                opacity: 0.5;
-                border-radius: 5px;
-                font-size: 2rem;
-            }
-            
-        }
-        .time {
-            position: absolute;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 250px;
-            height: 90px;
-            bottom: 30px;
-            border-radius: 15px;
-            background:var(--gradient);
-        }
-        .div__temp{
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: center;
-            img{
-                width: 40px;
-            }
-            input{
-                width: 100px;
-                height: 40px;
-                text-align: center;
-                background-color: transparent;
-                border: none;
-                font-weight: bold;
-                font-size: 4rem;
-                color: var(--white);
-                
-    
-            }
-        }
-        .div__date {
-            margin-left: 10px;
-            text-align: center;
-            .city{
-                display: flex;
-                align-items: center;
-                .icon__city{
-                    width: 14px;
-                    height: 14px;
-                    margin-right: 5px;
-                    filter: brightness(4.25);
-                }
-            }
-            input{
-                width: 120px;
-                height: 30px;
-                background-color: transparent;
-                border: none;
-                font-weight: bold;
-                color: var(--white);
-                font-size: 1.4rem;
-            }
-        }
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0 auto;
+  min-width: 360px;
+  background: radial-gradient(circle, rgba(4,20,33,1) 0%, rgba(8,25,43,1) 100%);
+  
+  .main__container {
+    display: flex;
+    flex-direction: column;
+    margin: 0 10px;
+    gap: 10px;
+    background: radial-gradient(circle, rgba(171,171,247,1) 0%, rgba(0,212,255,1) 100%);
+    max-width: 450px;
+    border-radius: 20px;
+    align-items: center;
+    padding: 20px 0;
+    .span {
+      background-color: transparent;
+      border: none;
     }
+    .country {
+      text-align: center;
+      color: white;
+      font-weight: bold;
+      font-size: 2.8rem;
+    }
+    .weather__logo {
+      width: 200px;
+      height: 200px;
+    }
+    .temperature {
+      text-align: center;
+      max-width: 300px;
+      color: white;
+      font-size: 12rem;
+      font-weight: bold;
+    }
+    .description {
+      color: white;
+      font-weight: bold;
+      font-size: 2.5rem;
+      text-align: center;
+    }
+    .date {
+      color: white;
+      text-align: center;
+      font-size: 1.5rem;
+    }
+    .today__container {
+      display: flex;
+      width: 100%;
+      justify-content: space-evenly;
+      border-top: 1px solid #6ac5ff;
+
+
+      padding-top: 20px;
+    }
+    .item__container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .item__container-logo {
+      width: 30px;
+    }
+    .item__container-text {
+      background: transparent;
+      color: white;
+      border: none;
+      font-weight: bold;
+      width: 100px;
+      text-align: center;
+    }
+    .item__container-description {
+      background: transparent;
+      color: rgb(232, 229, 241);
+      font-weight: bold;
+      border: none;
+      text-align: center;
+      width: 100px;
+    }
+
+
+  }
+  
+  .footer__container {
+    
+    color: white;
+    padding-bottom: 20px;
+    max-width: 470px;
+    .subtitle__container {
+      display: flex;
+      justify-content: space-between;
+      margin: 20px 10px;
+      .subtitle {
+        font-size: 2rem;
+      }
+      .view__more {
+        font-size: 1.5rem;
+      }
+    }
+    .timeLapsItem__container {
+      display: flex;
+      justify-content: space-evenly;
+      .item__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 1px solid white;
+        border-radius: 20px;
+        padding: 10px;
+        .hour__item {
+          color: gray;
+        }
+      }
+    }
+    .items__container {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      height: 100%;
+      .item__container {
+        display: flex;
+        justify-content: space-between;
+        margin: 10px;
+      }
+    }
+   
+  }
+  .main__container-reduce {
+    gap: 5px
+  }
+  .footer__container-deploy {
+    height: 100%;
+  }
+}
+
+@media (min-width: 470px) {
+  .container {
+    .main__container , .footer__container {
+      margin: 0 auto;
+      width: 450px;
+    }
+  }
+
+}
+@media (max-width: 600px) and (min-height: 800px) {
+  .container {
+    height: 100vh;
+    .main__container {
+      gap: 30px;
+    }
+    .main__container-reduce {
+      gap: 5px;
+    }
+  }
+}
+@media (min-width: 800px) {
+  .container {
+    flex-direction: row;
+    height: 100vh;
+  }
 }
