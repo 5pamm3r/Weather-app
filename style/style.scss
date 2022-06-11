@@ -20,26 +20,28 @@ body {
 }
 
 .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   margin: 0 auto;
-  width: 400px;
+  min-width: 360px;
   background: radial-gradient(circle, rgba(4,20,33,1) 0%, rgba(8,25,43,1) 100%);
   
   .main__container {
     display: flex;
     flex-direction: column;
-    margin: 0 auto;
-    gap: 5px;
+    margin: 0 10px;
+    gap: 10px;
     background: radial-gradient(circle, rgba(171,171,247,1) 0%, rgba(0,212,255,1) 100%);
-    width: 360px;
-    height: 600px;
+    max-width: 450px;
     border-radius: 20px;
     align-items: center;
-    justify-content: space-evenly;
-    .input {
+    padding: 20px 0;
+    .span {
       background-color: transparent;
       border: none;
     }
-    .country__input {
+    .country {
       text-align: center;
       color: white;
       font-weight: bold;
@@ -49,7 +51,7 @@ body {
       width: 200px;
       height: 200px;
     }
-    .temp__input {
+    .temperature {
       text-align: center;
       max-width: 300px;
       color: white;
@@ -62,7 +64,7 @@ body {
       font-size: 2.5rem;
       text-align: center;
     }
-    .date__input {
+    .date {
       color: white;
       text-align: center;
       font-size: 1.5rem;
@@ -103,15 +105,16 @@ body {
 
 
   }
+  
   .footer__container {
+    
     color: white;
-    display: flex;
-    flex-direction: column;
     padding-bottom: 20px;
+    max-width: 470px;
     .subtitle__container {
       display: flex;
       justify-content: space-between;
-      margin: 20px;
+      margin: 20px 10px;
       .subtitle {
         font-size: 2rem;
       }
@@ -134,5 +137,50 @@ body {
         }
       }
     }
+    .items__container {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      height: 100%;
+      .item__container {
+        display: flex;
+        justify-content: space-between;
+        margin: 10px;
+      }
+    }
+   
+  }
+  .main__container-reduce {
+    gap: 5px
+  }
+  .footer__container-deploy {
+    height: 100%;
+  }
+}
+
+@media (min-width: 470px) {
+  .container {
+    .main__container , .footer__container {
+      margin: 0 auto;
+      width: 450px;
+    }
+  }
+
+}
+@media (max-width: 600px) and (min-height: 800px) {
+  .container {
+    height: 100vh;
+    .main__container {
+      gap: 30px;
+    }
+    .main__container-reduce {
+      gap: 5px;
+    }
+  }
+}
+@media (min-width: 800px) {
+  .container {
+    flex-direction: row;
+    height: 100vh;
   }
 }
