@@ -1,20 +1,12 @@
-const itemsContainer = [];
+const fragment = document.createDocumentFragment()
+
 const itemsTodayContainer = (logo, text, description) => {
-  const itemContainer = document.createElement("div");
-  const imgLogo = document.createElement("img");
-  const textInput = document.createElement("input");
-  const descriptionInput = document.createElement("input");
-  itemContainer.className = "item__container";
-  imgLogo.className = "item__container-logo";
-  textInput.className = "item__container-text";
-  descriptionInput.className = "item__container-description";
-
-  imgLogo.src = logo;
-  textInput.value = text;
-  descriptionInput.value = description;
-
-  itemContainer.append(imgLogo, textInput, descriptionInput);
-
-  itemsContainer.push(itemContainer);
+  const itemsContainer = document.querySelector('#templateMainItemsContainer').content;
+  itemsContainer.querySelector('.mainItems__icon').src = logo
+  itemsContainer.querySelector('.mainItems__percentage').textContent = text
+  itemsContainer.querySelector('.mainItems__description').textContent = description
+  
+  const clone = document.importNode(itemsContainer, true)
+  fragment.append(clone)
 };
-export { itemsContainer, itemsTodayContainer };
+export { itemsTodayContainer, fragment };

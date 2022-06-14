@@ -7,10 +7,10 @@ import {
   dateInput,
   description,
   infoContainer,
-  todayContainer,
+  todayContainer
 } from "./indexUI.js";
 import { container } from "../footerContainer/indexUI.js";
-import { itemsContainer, itemsTodayContainer } from "./itemsTodayContainer.js";
+import { itemsTodayContainer, fragment } from "./itemsTodayContainer.js";
 
 backBtn.addEventListener('click',() => {
   mainContainer.classList.remove('main__container-reduce')
@@ -20,8 +20,8 @@ backBtn.addEventListener('click',() => {
   
   countryInput.insertAdjacentElement('afterend', weatherLogo)
   weatherLogo.insertAdjacentElement('afterend', infoContainer)
-  const containerItems = document.querySelector('#containerItems')
-  containerItems.remove()
+  const viewMoreContainer = document.querySelector('.viewMore__container')
+  viewMoreContainer.remove()
 
   countryInput.style.display = 'block'
   tempInput.style.display = 'block'
@@ -29,8 +29,8 @@ backBtn.addEventListener('click',() => {
   dateInput.style.display = 'block'
   const subtitleContainer = document.querySelector('#subtitleContainer')
   subtitleContainer.style.display = 'flex'
-  const timeLapsItemContainer = document.querySelector('#timeLapsItemContainer')
-  timeLapsItemContainer.style.display = 'flex'
+  const timeLapsContainer = document.querySelector('.timeLapsItem__container')
+  timeLapsContainer.style.display = 'flex'
   infoContainer.append(tempInput, description)
 
   // const weatherContainer = document.createElement('div')
@@ -80,7 +80,8 @@ const main = (data) => {
     "87 %",
     "Chance of rain"
   );
-  todayContainer.append(...itemsContainer);
+  todayContainer.append(fragment)
+
 
   // document.querySelector("#input__temp").value = `${Math.floor(
   //   data.main.temp
