@@ -1,25 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css/style.css">
-    <link rel="icon" href="https://img.icons8.com/doodle/100/000000/umbrella--v1.png">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css/style.css" />
+    <link
+      rel="icon"
+      href="https://img.icons8.com/doodle/100/000000/umbrella--v1.png"
+    />
     <title>Weather-app</title>
-</head>
-<body>
+  </head>
+  <body>
     <section class="container" id="container">
-        <div class="main__container" id="mainContainer">
-            <!-- <form id="searchForm" class="search__form">
+      <div class="main__container" id="mainContainer">
+        <!-- <form id="searchForm" class="search__form">
                 <input type="text" id="searchInput" required placeholder=" Ingrese localidad ..."> 
             </form> -->
-            
-        </div>
-        <footer class="footer__container" id="footerContainer">
-
-        </footer>
+      </div>
+      <footer class="footer__container" id="footerContainer">
+        <div class="timeLapsItem__container"></div>
+      </footer>
     </section>
+
+    <template id="templateViewMore">
+      <div class="viewMoreItem__container">
+        <span class="item__container-day"></span>
+        <div class="weather__container">
+          <img  class='weather__icon' src="" alt="weather icon" />
+          <span class="weather__container-description"></span>
+        </div>
+        <div class="max-min__container">
+          <span class="max__temp"></span>
+          <span class="min__temp"></span>
+        </div>
+      </div>
+    </template>
+
+    <template id="templateWeatherToday">
+      <div class="weatherToday__container">
+        <span class="weatherToday__temp"></span>
+        <img class="weatherToday__icon" src="" alt="weather icon" />
+        <span class="weatherToday__hour"></span>
+      </div>
+    </template>
+
+    <template id="templateMainItemsContainer">
+      <div class="mainItems__container">
+        <img class="mainItems__icon" src="" alt="weather icon">
+        <span class="mainItems__percentage"></span>
+        <span class="mainItems__description"></span>
+      </div>
+    </template>
+
     <script src="./scripts/index.js" type="module"></script>
-</body>
+  </body>
 </html>
