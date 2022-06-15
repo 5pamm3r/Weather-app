@@ -1,64 +1,64 @@
-import { data } from "../data.js";
-import { nextDays } from "./nextDays/index.js";
+import { nextDays, viewMoreContainer } from "./nextDays/index.js";
 import { container, subtitleContainer, subtitle, viewMore } from "./indexUI.js";
 import { timeLaps, timeLapsContainer } from "./timeLaps.js";
+import { changeStyle } from "./changeStyle.js";
 
-import { mainContainer, backBtn, countryInput, weatherLogo, tempInput, description, dateInput } from "../mainContainer/indexUI.js";
+const footerContainer = async () => {
+  try {
+    const res = await fetch('https://community-open-weather-map.p.rapidapi.com/forecast?q=salto%2Cuy&units=metric&lang=es',
+      {
+        headers: {
+          'X-RapidAPI-Key': '03180f7dcemsh85b598425ef8801p16815ajsnb73ba7cd518c',
+          'X-RapidAPI-Host': 'community-open-weather-map.p.rapidapi.com'
+        }
+      });
+    const data = await res.json()
+    console.log(data)
 
 
-const footerContainer = () => {
-  subtitle.textContent = "Today";
-  viewMore.textContent = "7 days";
-  viewMore.addEventListener('click', () => {
-    nextDays(data)
-    mainContainer.classList.add('main__container-reduce')
-    container.classList.add('footer__container-deploy')
-    countryInput.style.display = 'none'
-    // tempInput.style.display = 'none'
-    // description.style.display = 'none'
-    dateInput.style.display = 'none'
-    subtitleContainer.style.display = 'none'
-    timeLapsContainer.style.display = 'none'
-    
-    const weatherContainer = document.createElement('div')
-    weatherContainer.setAttribute('id','weatherContainer')
-    weatherContainer.style.display = 'flex'
-    const infoContainer = document.createElement('div')
-    infoContainer.append('Tommorow', tempInput, description )
-    infoContainer.style.display = 'flex'
-    infoContainer.style.flexDirection = 'column'
-    weatherContainer.append(weatherLogo, infoContainer)
-    weatherContainer.style.display = 'flex'
-    mainContainer.insertAdjacentElement('afterbegin', weatherContainer)
-    const sectionContainer = document.querySelector('#container')
-    sectionContainer.style.height = '100vh'
-    mainContainer.insertAdjacentElement('afterbegin',backBtn)
-    backBtn.style.display = 'block'
-  })
-  subtitleContainer.append(subtitle, viewMore);
+    subtitle.textContent = "Today";
+    viewMore.textContent = "7 days";
 
-  timeLaps(
-    "21°",
-    "https://img.icons8.com/emoji/48/undefined/cloud-with-lightning-and-rain-emoji.png",
-    "19:00"
-  );
-  timeLaps(
-    "23°",
-    "https://img.icons8.com/emoji/48/undefined/cloud-with-lightning-and-rain-emoji.png",
-    "23:00"
-  );
-  timeLaps(
-    "19°",
-    "https://img.icons8.com/emoji/48/undefined/cloud-with-lightning-and-rain-emoji.png",
-    "2:00"
-  );
-  timeLaps(
-    "21°",
-    "https://img.icons8.com/emoji/48/undefined/cloud-with-lightning-and-rain-emoji.png",
-    "6:00"
-  );
+    viewMore.addEventListener('click', () => {
+      const viewMoreItemContainer = document.getElementsByClassName('viewMoreItem__container').length
+      if (viewMoreItemContainer <= 0) {
+        nextDays(data)
+        changeStyle();
 
-  container.append(subtitleContainer, timeLapsContainer);
+      } else {
+        changeStyle()
+      }
+
+
+    })
+    subtitleContainer.append(subtitle, viewMore);
+    console.log(data.list[0].dt_txt)
+    timeLaps(
+      `${Math.floor(data.list[0].main.temp)}°`,
+      `https://openweathermap.org/img/wn/${data.list[0].weather[0].icon}.png`,
+      data.list[0].dt_txt.substring(11, 16)
+    );
+    timeLaps(
+      `${Math.floor(data.list[1].main.temp)}°`,
+      `https://openweathermap.org/img/wn/${data.list[1].weather[0].icon}.png`,
+      data.list[1].dt_txt.substring(11, 16)
+    );
+    timeLaps(
+      `${Math.floor(data.list[2].main.temp)}°`,
+      `https://openweathermap.org/img/wn/${data.list[2].weather[0].icon}.png`,
+      data.list[2].dt_txt.substring(11,16)
+    );
+    timeLaps(
+      `${Math.floor(data.list[3].main.temp)}°`,
+      `https://openweathermap.org/img/wn/${data.list[3].weather[0].icon}.png`,
+      data.list[3].dt_txt.substring(11,16)
+    );
+
+    container.append(subtitleContainer, timeLapsContainer);
+
+  } catch (error) {
+    console.error(error)
+  }
 };
 
 export { footerContainer };

@@ -1,16 +1,21 @@
-import { viewMoreItemsContainer, fragment} from "./viewMore.js"
-import { container } from "../../footerContainer/indexUI.js"
-const viewMoreContainer = document.createElement('div')
-viewMoreContainer.setAttribute('class','viewMore__container')
+import { viewMoreItemsContainer, fragmentViewMore } from "./viewMore.js";
+import { container } from "../../footerContainer/indexUI.js";
+const viewMoreContainer = document.createElement("div");
+viewMoreContainer.setAttribute("class", "viewMore__container");
+viewMoreContainer.setAttribute("id", "viewMoreContainer");
+
 
 const nextDays = (data) => {
-  for(let i=0; i<6; i++){
-    viewMoreItemsContainer(data)
-  }
+  viewMoreItemsContainer(data);
+  viewMoreItemsContainer(data);
+  viewMoreItemsContainer(data);
+  viewMoreItemsContainer(data);
+  viewMoreItemsContainer(data);
+  viewMoreItemsContainer(data);
+  viewMoreContainer.append(fragmentViewMore);
+  container.append(viewMoreContainer);
 
-  viewMoreContainer.append(fragment)
-  container.append(viewMoreContainer)
-  
-}
 
-export { nextDays, viewMoreContainer }
+};
+
+export { nextDays, viewMoreContainer };
