@@ -1,6 +1,4 @@
 const mainContainer = document.querySelector("#mainContainer");
-// const searchForm = document.createElement('form')
-// const searchInput = document.createElement('input')
 const backBtn = document.createElement('button')
 backBtn.setAttribute('class','back__button')
 backBtn.textContent = '<'
@@ -26,7 +24,6 @@ mainContainer.append(
   infoContainer,
   todayContainer
 );
-// searchForm.append(searchInput)
 
 export {
   mainContainer,

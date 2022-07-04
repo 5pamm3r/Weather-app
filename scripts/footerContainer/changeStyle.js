@@ -20,12 +20,11 @@ const changeStyle = () => {
   mainContainer.classList.add("main__container-reduce");
   footerContainer.classList.add("footer__container-deploy");
   countryInput.style.display = "none";
-  // tempInput.style.display = 'none'
-  // description.style.display = 'none'
   dateInput.style.display = "none";
   subtitleContainer.style.display = "none";
   timeLapsContainer.style.display = "none";
   viewMoreContainer.style.display = "flex";
+  tempInput.style.fontSize = '9rem'
 
   weatherContainer.setAttribute("id", "weatherContainer");
   weatherContainer.setAttribute("class", "weather__container");
@@ -33,7 +32,7 @@ const changeStyle = () => {
   sectionContainer.style.height = "100vh";
   backBtn.style.display = "block";
 
-  infoContainer.append("Tommorow", tempInput, description);
+  infoContainer.append(tempInput, description);
   weatherContainer.append(weatherLogo, infoContainer);
   mainContainer.insertAdjacentElement("afterbegin", weatherContainer);
   mainContainer.insertAdjacentElement("afterbegin", backBtn);

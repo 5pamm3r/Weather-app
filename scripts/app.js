@@ -17,7 +17,7 @@ const getWeatherData = async (city) => {
       if(item.sys.country === 'UY') {
         console.log(item);
         main(item);
-        footerContainer(item);
+        footerContainer();
       }
     })
   } catch (err) {

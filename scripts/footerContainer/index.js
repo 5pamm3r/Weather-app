@@ -17,7 +17,7 @@ const footerContainer = async () => {
 
 
     subtitle.textContent = "Today";
-    viewMore.textContent = "7 days";
+    viewMore.textContent = "View more";
 
     viewMore.addEventListener('click', () => {
       const viewMoreItemContainer = document.getElementsByClassName('viewMoreItem__container').length

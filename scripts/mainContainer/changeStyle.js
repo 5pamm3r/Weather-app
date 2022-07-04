@@ -6,31 +6,33 @@ import {
   tempInput,
   dateInput,
   description,
-  infoContainer,
 } from "./indexUI.js";
 import { container } from "../footerContainer/indexUI.js";
 
 const changeStyle = () => {
+  const sectionContainer = document.querySelector('#container')
+  const ref = document.querySelector("#weatherContainer");
+  const subtitleContainer = document.querySelector("#subtitleContainer");
+  const timeLapsContainer = document.querySelector(".timeLapsItem__container");
+  const viewMoreContainer = document.querySelector("#viewMoreContainer");
+  
   mainContainer.classList.remove("main__container-reduce");
   container.classList.remove("footer__container-deploy");
-  const ref = document.querySelector("#weatherContainer");
   ref.remove();
-
-  countryInput.insertAdjacentElement("afterend", weatherLogo);
-  weatherLogo.insertAdjacentElement("afterend", infoContainer);
-  const viewMoreContainer = document.querySelector("#viewMoreContainer");
+  
   viewMoreContainer.style.display = "none";
-
   countryInput.style.display = "block";
   tempInput.style.display = "block";
   description.style.display = "block";
   dateInput.style.display = "block";
-  const subtitleContainer = document.querySelector("#subtitleContainer");
   subtitleContainer.style.display = "flex";
-  const timeLapsContainer = document.querySelector(".timeLapsItem__container");
   timeLapsContainer.style.display = "flex";
-  infoContainer.append(tempInput, description);
+  sectionContainer.style.height = '100%'
   backBtn.style.display = "none";
+
+  countryInput.insertAdjacentElement("afterend", weatherLogo);
+  weatherLogo.insertAdjacentElement("afterend", tempInput);
+  tempInput.insertAdjacentElement('afterend', description)
 };
 
 export { changeStyle };

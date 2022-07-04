@@ -6,12 +6,11 @@ viewMoreContainer.setAttribute("id", "viewMoreContainer");
 
 
 const nextDays = (data) => {
-  viewMoreItemsContainer(data);
-  viewMoreItemsContainer(data);
-  viewMoreItemsContainer(data);
-  viewMoreItemsContainer(data);
-  viewMoreItemsContainer(data);
-  viewMoreItemsContainer(data);
+  viewMoreItemsContainer(data.list[7]);
+  viewMoreItemsContainer(data.list[15]);
+  viewMoreItemsContainer(data.list[23]);
+  viewMoreItemsContainer(data.list[31]);
+  viewMoreItemsContainer(data.list[39]);
   viewMoreContainer.append(fragmentViewMore);
   container.append(viewMoreContainer);
 
