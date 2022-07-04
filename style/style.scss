@@ -42,11 +42,11 @@ body {
       display: none;
       background: transparent;
       color: white;
-      font-size: 3rem;
+      font-size: 4rem;
       border: none;
       position: absolute;
-      left: 0;
-      top: 0;
+      left: 5px;
+      top: 10px;
     }
     .span {
       background-color: transparent;
@@ -72,7 +72,7 @@ body {
     .description {
       color: white;
       font-weight: bold;
-      font-size: 2.5rem;
+      font-size: 3rem;
       text-align: center;
     }
     .date {
@@ -92,27 +92,31 @@ body {
     .mainItems__container {
       display: flex;
       flex-direction: column;
+      gap: 10px;
       align-items: center;
+      .mainItems__percentage {
+        background: transparent;
+        color: white;
+        border: none;
+        font-weight: bold;
+        font-size: 1.5rem;
+        width: 100px;
+        text-align: center;
+      }
+      .mainItems__description {
+        background: transparent;
+        color: rgb(232, 229, 241);
+        font-weight: bold;
+        font-size: 1.5rem;
+        border: none;
+        text-align: center;
+        width: 100px;
+      }
     }
     .mainItems__icon {
       width: 30px;
     }
-    .mainItems__percentage {
-      background: transparent;
-      color: white;
-      border: none;
-      font-weight: bold;
-      width: 100px;
-      text-align: center;
-    }
-    .mainItems__description {
-      background: transparent;
-      color: rgb(232, 229, 241);
-      font-weight: bold;
-      border: none;
-      text-align: center;
-      width: 100px;
-    }
+    
 
 
   }
@@ -130,7 +134,12 @@ body {
         font-size: 2rem;
       }
       .view__more {
-        font-size: 1.5rem;
+        font-size: 1.6rem;
+        background-color: transparent;
+        color: white;
+        border: none;
+        font-weight: bold;
+        cursor: pointer;
       }
     }
     .timeLapsItem__container {
@@ -174,6 +183,9 @@ body {
           align-items: center;
           gap: 10px;
         }
+        .max__temp {
+          font-size: 2rem;
+        }
       }
     }
    
@@ -187,7 +199,7 @@ body {
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: space-between;
+        justify-content: space-evenly;
       }
     }
   }
@@ -208,7 +220,7 @@ body {
 }
 @media (max-width: 600px) and (min-height: 800px) {
   .container {
-    height: 100vh;
+    height: 100%;
     .main__container {
       gap: 30px;
     }
@@ -217,6 +229,9 @@ body {
     }
   }
 }
+
+
+
 @media (min-width: 800px) {
   .container {
     flex-direction: row;

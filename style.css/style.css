@@ -37,11 +37,11 @@ body {
       display: none;
       background: transparent;
       color: white;
-      font-size: 3rem;
+      font-size: 4rem;
       border: none;
       position: absolute;
-      left: 0;
-      top: 0; }
+      left: 5px;
+      top: 10px; }
     .container .main__container .span {
       background-color: transparent;
       border: none; }
@@ -62,7 +62,7 @@ body {
     .container .main__container .description {
       color: white;
       font-weight: bold;
-      font-size: 2.5rem;
+      font-size: 3rem;
       text-align: center; }
     .container .main__container .date {
       color: white;
@@ -77,23 +77,26 @@ body {
     .container .main__container .mainItems__container {
       display: flex;
       flex-direction: column;
+      gap: 10px;
       align-items: center; }
+      .container .main__container .mainItems__container .mainItems__percentage {
+        background: transparent;
+        color: white;
+        border: none;
+        font-weight: bold;
+        font-size: 1.5rem;
+        width: 100px;
+        text-align: center; }
+      .container .main__container .mainItems__container .mainItems__description {
+        background: transparent;
+        color: #e8e5f1;
+        font-weight: bold;
+        font-size: 1.5rem;
+        border: none;
+        text-align: center;
+        width: 100px; }
     .container .main__container .mainItems__icon {
       width: 30px; }
-    .container .main__container .mainItems__percentage {
-      background: transparent;
-      color: white;
-      border: none;
-      font-weight: bold;
-      width: 100px;
-      text-align: center; }
-    .container .main__container .mainItems__description {
-      background: transparent;
-      color: #e8e5f1;
-      font-weight: bold;
-      border: none;
-      text-align: center;
-      width: 100px; }
   .container .footer__container {
     color: white;
     padding-bottom: 20px;
@@ -105,7 +108,12 @@ body {
       .container .footer__container .subtitle__container .subtitle {
         font-size: 2rem; }
       .container .footer__container .subtitle__container .view__more {
-        font-size: 1.5rem; }
+        font-size: 1.6rem;
+        background-color: transparent;
+        color: white;
+        border: none;
+        font-weight: bold;
+        cursor: pointer; }
     .container .footer__container .timeLapsItem__container {
       display: flex;
       justify-content: space-evenly; }
@@ -132,6 +140,8 @@ body {
           display: flex;
           align-items: center;
           gap: 10px; }
+        .container .footer__container .viewMore__container .viewMoreItem__container .max__temp {
+          font-size: 2rem; }
   .container .main__container-reduce {
     gap: 5px; }
     .container .main__container-reduce .weather__container {
@@ -141,7 +151,7 @@ body {
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: space-between; }
+        justify-content: space-evenly; }
   .container .footer__container-deploy {
     height: 100%; }
 
@@ -152,7 +162,7 @@ body {
 
 @media (max-width: 600px) and (min-height: 800px) {
   .container {
-    height: 100vh; }
+    height: 100%; }
     .container .main__container {
       gap: 30px; }
     .container .main__container-reduce {
