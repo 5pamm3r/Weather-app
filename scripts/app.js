@@ -8,14 +8,14 @@ const getWeatherData = async (city) => {
         headers: {
           "x-rapidapi-host": "community-open-weather-map.p.rapidapi.com",
           "x-rapidapi-key":
-            "03180f7dcemsh85b598425ef8801p16815ajsnb73ba7cd518c",
+            "3e3e6304f0mshe71eb2622fc0338p114ee1jsn7d5ecdc73032",
         },
       }
     );
     const data = await res.json();
+    
     data.list.map((item)=>{
       if(item.sys.country === 'UY') {
-        console.log(item);
         main(item);
         footerContainer();
       }
@@ -26,9 +26,9 @@ const getWeatherData = async (city) => {
 };
 
 document.body.addEventListener("submit", (e) => {
-  if (e.target.id === "search__form") {
+  if (e.target.id === "searchForm") {
     e.preventDefault();
-    const searchInput = document.querySelector("#search__input");
+    const searchInput = document.querySelector("#searchInput");
     getWeatherData(searchInput.value);
   }
 });
