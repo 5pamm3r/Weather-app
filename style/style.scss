@@ -38,6 +38,16 @@ body {
     align-items: center;
     padding: 20px 0;
     position: relative;
+    .search__button {
+      position: absolute;
+      left: 5px;
+      top: 5px;
+      background-color: transparent;
+      border: none;
+      object-fit: cover;
+      cursor: pointer;
+
+    }
     .back__button {
       display: none;
       background: transparent;

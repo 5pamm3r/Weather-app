@@ -33,6 +33,14 @@ body {
     align-items: center;
     padding: 20px 0;
     position: relative; }
+    .container .main__container .search__button {
+      position: absolute;
+      left: 5px;
+      top: 5px;
+      background-color: transparent;
+      border: none;
+      object-fit: cover;
+      cursor: pointer; }
     .container .main__container .back__button {
       display: none;
       background: transparent;

@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style.css/style.css" />
+    <script src="./scripts/scrollReveal/scrollreveal.js"></script>
     <link
       rel="icon"
       href="https://img.icons8.com/doodle/100/000000/umbrella--v1.png"
@@ -15,8 +16,17 @@
     <section class="container" id="container">
       <div class="main__container" id="mainContainer">
         <form id="searchForm" class="search__form">
-                <input type="text" id="searchInput" required placeholder=" Ingrese localidad ..."> 
-            </form>
+          <button id="searchBtn" class="search__button">
+            <img src="https://img.icons8.com/ios-glyphs/30/000000/search--v1.png" alt="">
+          </button>
+          <input
+            type="text"
+            id="searchInput"
+            required
+            placeholder="Ingrese localidad ..."
+            style="display: none"
+          />
+        </form>
       </div>
       <footer class="footer__container" id="footerContainer">
         <div class="timeLapsItem__container"></div>
@@ -27,7 +37,7 @@
       <div class="viewMoreItem__container" id="viewMoreIemContainer">
         <span class="item__container-day"></span>
         <div class="weather__container">
-          <img  class='weather__icon' src="" alt="weather icon" />
+          <img class="weather__icon" src="" alt="weather icon" />
           <span class="weather__container-description"></span>
         </div>
         <div class="max-min__container">
@@ -47,16 +57,15 @@
 
     <template id="templateMainItemsContainer">
       <div class="mainItems__container">
-        <img class="mainItems__icon" src="" alt="weather icon">
+        <img class="mainItems__icon" src="" alt="weather icon" />
         <span class="mainItems__percentage"></span>
         <span class="mainItems__description"></span>
       </div>
     </template>
 
-    <template id="templateViewMoreContainer">
-
-    </template>
+    <template id="templateViewMoreContainer"> </template>
 
     <script src="./scripts/app.js" type="module"></script>
+    <script src="./scripts/scrollReveal/index.js"></script>
   </body>
 </html>
