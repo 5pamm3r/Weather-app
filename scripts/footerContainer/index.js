@@ -8,7 +8,7 @@ const footerContainer = async () => {
     const res = await fetch('https://community-open-weather-map.p.rapidapi.com/forecast?q=salto%2Cuy&units=metric&lang=es',
       {
         headers: {
-          'X-RapidAPI-Key': '03180f7dcemsh85b598425ef8801p16815ajsnb73ba7cd518c',
+          'X-RapidAPI-Key': '3e3e6304f0mshe71eb2622fc0338p114ee1jsn7d5ecdc73032',
           'X-RapidAPI-Host': 'community-open-weather-map.p.rapidapi.com'
         }
       });
