@@ -1,25 +1,18 @@
-import { main } from "./mainContainer/index.js";
-import { footerContainer } from "./footerContainer/index.js";
+import { main } from "./components/main.js";
 const getWeatherData = async (city) => {
   try {
     const res = await fetch(
-      `https://community-open-weather-map.p.rapidapi.com/find?q=${city}&units=metric&lang=sp`,
+      `https://weatherapi-com.p.rapidapi.com/forecast.json?q=${city}&days=3`,
       {
         headers: {
-          "x-rapidapi-host": "community-open-weather-map.p.rapidapi.com",
-          "x-rapidapi-key":
-            "3e3e6304f0mshe71eb2622fc0338p114ee1jsn7d5ecdc73032",
+          "X-RapidAPI-Key":
+            "03180f7dcemsh85b598425ef8801p16815ajsnb73ba7cd518c",
+          "X-RapidAPI-Host": "weatherapi-com.p.rapidapi.com",
         },
       }
     );
     const data = await res.json();
-    
-    data.list.map((item)=>{
-      if(item.sys.country === 'UY') {
-        main(item);
-        footerContainer();
-      }
-    })
+    main(data);
   } catch (err) {
     console.error(err);
   }
@@ -36,5 +29,3 @@ document.body.addEventListener("submit", (e) => {
 window.onload = () => {
   getWeatherData("Salto");
 };
-
-
