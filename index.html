@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style.css/style.css" />
-    <script src="./scripts/scrollReveal/scrollreveal.js"></script>
     <link
       rel="icon"
       href="https://img.icons8.com/doodle/100/000000/umbrella--v1.png"
@@ -27,45 +26,46 @@
             style="display: none"
           />
         </form>
+        <span id="location"></span>
+        <div class="weatherIcon__container">
+          <img id="weatherIcon" class="weather__icon" />
+        </div>
+        <span id="temperature"></span>
+        <span id="description"></span>
+        <span id="day"></span>
+        <div class="weatherToday__container" id="weatherTodayContainer"></div>
       </div>
       <footer class="footer__container" id="footerContainer">
-        <div class="timeLapsItem__container"></div>
+        <div>
+          <span>Today</span>
+          <button id="nextDays">Next Days</button>
+        </div>
+        <div class="nextHours__container" id="nextHoursContainer"></div>
+        <div class="nextDays__container" id="nextDaysContainer"></div>
       </footer>
     </section>
 
-    <template id="templateViewMore">
-      <div class="viewMoreItem__container" id="viewMoreIemContainer">
-        <span class="item__container-day"></span>
-        <div class="weather__container">
-          <img class="weather__icon" src="" alt="weather icon" />
-          <span class="weather__container-description"></span>
+    <template id="templateNextDays">
+      <div class="nextDay__container" id="nextDayContainer">
+        <span class="nextDay-day" id="nextDay"></span>
+        <div class="nextDayDescription__container">
+          <img class="nextDay__icon" alt="weather next days" id="nextDayIcon" />
+          <span class="nextDay__description" id="nextDayDescription"></span>
         </div>
-        <div class="max-min__container">
-          <span class="max__temp"></span>
-          <span class="min__temp"></span>
+        <div class="maxmin__container">
+          <span class="temperature-max" id="maxTemp"></span>
+          <span class="temperature-min" id="minTemp"></span>
         </div>
       </div>
     </template>
 
     <template id="templateWeatherToday">
       <div class="weatherToday__container">
-        <span class="weatherToday__temp"></span>
-        <img class="weatherToday__icon" src="" alt="weather icon" />
-        <span class="weatherToday__hour"></span>
+        <span class="weatherToday__subtitle" id="weatherTodaySubtitle"></span>
+        <img class="weatherToday__icon" src="" alt="weather icon" id="weatherTodayIcon" />
+        <span class="weatherToday__description" id="weatherTodayDescription"></span>
       </div>
     </template>
-
-    <template id="templateMainItemsContainer">
-      <div class="mainItems__container">
-        <img class="mainItems__icon" src="" alt="weather icon" />
-        <span class="mainItems__percentage"></span>
-        <span class="mainItems__description"></span>
-      </div>
-    </template>
-
-    <template id="templateViewMoreContainer"> </template>
-
     <script src="./scripts/app.js" type="module"></script>
-    <script src="./scripts/scrollReveal/index.js"></script>
   </body>
 </html>
