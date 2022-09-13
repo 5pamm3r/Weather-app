@@ -12,7 +12,7 @@
     <title>Weather-app</title>
   </head>
   <body>
-    <section class="container" id="container">
+    <section class="app">
       <div class="main__container" id="mainContainer">
         <form id="searchForm" class="search__form">
           <button id="searchBtn" class="search__button">
@@ -30,15 +30,15 @@
         <div class="weatherIcon__container">
           <img id="weatherIcon" class="weather__icon" />
         </div>
-        <span id="temperature"></span>
-        <span id="description"></span>
-        <span id="day"></span>
-        <div class="weatherToday__container" id="weatherTodayContainer"></div>
+        <span id="temperature" class="temperature"></span>
+        <span id="description" class="description"></span>
+        <span id="day" class="day"></span>
+        <div class="infoToday__container" id="InfoTodayContainer"></div>
       </div>
       <footer class="footer__container" id="footerContainer">
-        <div>
-          <span>Today</span>
-          <button id="nextDays">Next Days</button>
+        <div class="footerSubtitle__container">
+          <span class="footer-today">Today</span>
+          <button class="footer-nextDays" id="nextDays">Next Days</button>
         </div>
         <div class="nextHours__container" id="nextHoursContainer"></div>
         <div class="nextDays__container" id="nextDaysContainer"></div>
@@ -60,7 +60,7 @@
     </template>
 
     <template id="templateWeatherToday">
-      <div class="weatherToday__container">
+      <div class="weatherToday__container" id="weatherTodayContainer">
         <span class="weatherToday__subtitle" id="weatherTodaySubtitle"></span>
         <img class="weatherToday__icon" src="" alt="weather icon" id="weatherTodayIcon" />
         <span class="weatherToday__description" id="weatherTodayDescription"></span>
