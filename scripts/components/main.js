@@ -22,7 +22,7 @@ const main = (data) => {
     data.current.precip_mm,
     "Precip. mm"
   );
-  document.querySelector('#weatherTodayContainer').append(fragmentTodayContainer);
+  document.querySelector('#InfoTodayContainer').append(fragmentTodayContainer);
   
   nextHours(data.location.region, data.location.country)
 
