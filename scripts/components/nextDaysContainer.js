@@ -5,8 +5,8 @@ const nextDaysContainer = (day, icon, description, maxTemp, minTemp) => {
   container.querySelector('#nextDay').textContent = day;
   container.querySelector('#nextDayIcon').src = icon;
   container.querySelector('#nextDayDescription').textContent = description;
-  container.querySelector('#maxTemp').textContent = maxTemp;
-  container.querySelector('#minTemp').textContent = minTemp;
+  container.querySelector('#maxTemp').textContent = `${maxTemp}°`;
+  container.querySelector('#minTemp').textContent = `${minTemp}°`;
   const clone = document.importNode(container, true)
   fragmentNextDays.append(clone)
 }
