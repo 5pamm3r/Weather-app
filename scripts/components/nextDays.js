@@ -9,13 +9,12 @@ export const nextDays = (data) => {
     5: 'Friday',
     6: 'Saturday'
   }
-  nextDaysContainer(
-    days[new Date(data.forecast.forecastday[0].date_epoch*1000).getDay()],
-    data.forecast.forecastday[0].day.condition.icon,
-    data.forecast.forecastday[0].day.condition.text,
-    Math.floor(data.forecast.forecastday[0].day.maxtemp_c),
-    Math.floor(data.forecast.forecastday[0].day.mintemp_c),
-  )
+
+  document.querySelector('.footerSubtitle__container').style.display = 'none';
+  document.querySelector('#nextHoursContainer').style.display = 'none';
+  document.querySelector('#backBtn').style.display = 'inline-block';
+  document.querySelector('#nextDays').style.display = 'none'
+
   nextDaysContainer(
     days[new Date(data.forecast.forecastday[1].date_epoch*1000).getDay()],
     data.forecast.forecastday[1].day.condition.icon,
