@@ -1,3 +1,4 @@
+import { API_KEY } from "./components/apiKey.js";
 import { main } from "./components/main.js";
 const getWeatherData = async (city) => {
   try {
@@ -6,12 +7,13 @@ const getWeatherData = async (city) => {
       {
         headers: {
           "X-RapidAPI-Key":
-            "03180f7dcemsh85b598425ef8801p16815ajsnb73ba7cd518c",
+            API_KEY,
           "X-RapidAPI-Host": "weatherapi-com.p.rapidapi.com",
         },
       }
     );
     const data = await res.json();
+
     main(data);
   } catch (err) {
     console.error(err);
