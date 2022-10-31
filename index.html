@@ -14,28 +14,33 @@
   <body>
     <section class="app">
       <div class="main__container" id="mainContainer">
-        <form id="searchForm" class="search__form">
-          <button id="searchBtn" class="search__button">
-            <img src="https://img.icons8.com/ios-glyphs/30/000000/search--v1.png" alt="">
-          </button>
-          <input
+        <div class="location__container">
+          <form id="searchForm" class="search__form">
+            <button id="searchBtn" class="search__button">
+              <img src="https://img.icons8.com/ios-glyphs/30/000000/search--v1.png" alt="">
+            </button>
+            <input
             type="text"
             id="searchInput"
             required
             placeholder="Ingrese localidad ..."
-            style="display: none"
-          />
-        </form>
-        <span id="location"></span>
+            />
+          </form>
+          <span id="location" class="location"></span>
+        </div>
         <div class="weatherIcon__container">
           <img id="weatherIcon" class="weather__icon" />
         </div>
-        <span id="temperature" class="temperature"></span>
+        <div class="temperature__container">
+          <span id="temperature" class="temperature"></span>
+          <span class="degrees">°</span>
+        </div>
         <span id="description" class="description"></span>
         <span id="day" class="day"></span>
         <div class="infoToday__container" id="InfoTodayContainer"></div>
       </div>
       <footer class="footer__container" id="footerContainer">
+        <button class="back__button" id="backBtn">Back</button>
         <div class="footerSubtitle__container">
           <span class="footer-today">Today</span>
           <button class="footer-nextDays" id="nextDays">Next Days</button>
