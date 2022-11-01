@@ -1,3 +1,4 @@
 node_modules
 package-lock.json
 scripts/components/apiKey.js
+scripts/components/config.js
