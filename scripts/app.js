@@ -1,14 +1,12 @@
-// import { API_KEY } from "./components/apiKey.js";
 import { main } from "./components/main.js";
 const getWeatherData = async (city) => {
-  const key = config.MY_KEY;
   try {
     const res = await fetch(
       `https://weatherapi-com.p.rapidapi.com/forecast.json?q=${city}&days=3`,
       {
         headers: {
           "X-RapidAPI-Key":
-            key,
+            '03180f7dcemsh85b598425ef8801p16815ajsnb73ba7cd518c',
           "X-RapidAPI-Host": "weatherapi-com.p.rapidapi.com",
         },
       }
