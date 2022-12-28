@@ -1,0 +1,30 @@
+.location__container {
+  .search__form {
+    display: none;
+    justify-content: space-between;
+    border-radius: 10px;
+    width: 200px;
+    height: 30px;
+    padding: 0 4px;
+    margin: 7.5px 0;
+    background: white;
+    align-items: center;
+    gap: 5px;
+    i {
+      font-size: 1.4rem;
+    }
+    .searchBox {
+      width: 100%;
+      background: transparent;
+      border: none;
+      outline: none;
+      
+    }
+  }
+  .location {
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-size: 4rem;
+  }
+}

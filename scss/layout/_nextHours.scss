@@ -1,0 +1,39 @@
+.nextHours__container {
+  color: white;
+  font-size: var(--font-box);
+  @include mq(800px) {
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 20px;
+  }
+  .desk-today {
+    display: none;
+    @include mq(800px) {
+      display: block;
+      font-size: var(--font-subtitle);
+      margin: 10px;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+  }
+  .nextHours {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 20px;
+    font-size: var(--font-box)
+  }
+  .nextHour__container {
+    @include flexCenter;
+    gap: 5px;
+    flex-direction: column;
+    border: 1px solid darkgray;
+    border-radius: 20%;
+    padding: 10px;
+    .weatherToday__subtitle {
+      color: white;
+    }
+    .weatherToday__description {
+      color: darkgray;
+    }
+  }
+}

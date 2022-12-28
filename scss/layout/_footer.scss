@@ -1,0 +1,39 @@
+.footer__container {
+  width: 100%;
+  @include mq(800px) {
+    display: flex;
+    flex-direction: column;
+  }
+  .back__button {
+    margin: 40px 0 0 10px;
+    background: transparent;
+    color: darkgray;
+    border: none;
+    font-weight: bold;
+    font-size: var(--font-buttons);
+    cursor: pointer;
+    display: none;
+  }
+  .footerSubtitle__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin: 20px 10px;
+    color: white;
+    @include mq(800px) {
+      display: none;
+    }
+    .footer__nextDays {
+      background: transparent;
+      font-weight: bold;
+      font-size: var(--font-buttons);
+      border: none;
+      color: darkgray;
+      cursor: pointer;
+    }
+    .footer__today {
+      color: white;
+      font-size: var(--font-subtitle);
+    }
+  }
+}
