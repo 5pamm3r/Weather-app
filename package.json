@@ -4,8 +4,8 @@
     "scss": "node-sass --watch style/style.scss -o style.css",
     "start": "live-server"
   },
-  "dependencies": {
-    "live-server": "^1.2.1",
-    "node-sass": "^7.0.1"
+  "dependencies": {},
+  "devDependencies": {
+    "live-server": "^1.2.2"
   }
 }
