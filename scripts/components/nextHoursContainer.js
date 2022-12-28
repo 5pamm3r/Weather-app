@@ -5,7 +5,7 @@ const nextHoursContainer = (icon, temperature, hour) => {
   itemsContainer.querySelector('#weatherTodayIcon').src = icon
   itemsContainer.querySelector('#weatherTodaySubtitle').textContent = `${temperature}°`
   itemsContainer.querySelector('#weatherTodayDescription').textContent = `${hour}:00`
-  itemsContainer.querySelector('#weatherTodayContainer').classList.replace('weatherToday__container', 'nextHour__container')
+  itemsContainer.querySelector('#weatherTodayContainer').classList.add('nextHour__container')
   const clone = document.importNode(itemsContainer, true)
   fragmentNextHours.append(clone)
 };
