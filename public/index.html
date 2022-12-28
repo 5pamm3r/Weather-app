@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" href="./style.css/style.css" /> -->
+    <link rel="stylesheet" href="./css/main.min.css">
+    <link
+      rel="icon"
+      href="./img/icons/umbrella.png"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Weather-app</title>
+  </head>
+  <body>
+    <section class="app fade-in">
+      <section class="main__container fade-in" id="mainContainer" role="region" aria-labelledby="weatherToday-title">
+        <h2 id="weatherToday-title" class="offscreen">Current Weather Forecast</h2>
+        <div class="vapour none" id="vapour"></div>
+        <div class="back__animate" id="backAnimate"></div>
+        <div class="location__container">
+          <form id="searchForm" class="search__form" role="search">
+            <i class="fa fa-search" id="iconSearch"></i>
+            <i class="fas fa-sync fa-spin none" id="iconSpin"></i>
+            <label for="searchInput" class="offscreen">Enter a new location</label>
+            <input
+              class="searchBox"
+              type="text"
+              id="searchInput"
+              required
+              placeholder="City, Country"
+              role="searchbox"
+              size="40"
+              autocomplete="off"
+            />
+          </form>
+          <span id="location" class="location"></span>
+        </div>
+        <div class="weatherIcon__container" id="weatherIconContainer">
+          <img id="weatherIcon" class="weather__icon  thunderstorm" src="./img/images/thunderstorm.png"/>
+        </div>
+        <div class="temperature__container">
+          <span id="temperature" class="temperature"></span>
+        </div>
+        <span id="description" class="description"></span>
+        <span id="day" class="day"></span>
+        <!-- para mejorar accesibilidad (lectores de pantalla) -->
+        <a href="#infoTodayContainer" class="skip-link">Skip to Current Conditions</a>
+        <section class="infoToday__container" id="infoTodayContainer" role="region"></section>
+      </section>
+      <footer class="footer__container fade-in" id="footerContainer">
+        <button class="back__button" id="backBtn">Back</button>
+        <div class="footerSubtitle__container">
+          <span class="footer__today">Today</span>
+          <button class="footer__nextDays" id="nextDaysBtn">Next Days</button>
+        </div>
+        <a href="#nextHoursContainer" class="skip-link">Skip to Next Hours Conditions</a>
+        <section class="nextHours__container fade-in" role="region" aria-labelledby="nextHours-title">
+          <h2 id="nextHours-title" class="nextHours-title offscreen">Next Hours Forecast</h2>
+          <span class="desk-today">Today</span>
+          <div class="nextHours" id="nextHoursContainer"></div>
+        </section>
+        <a href="#nextDaysContainer" class="skip-link">Skip to Next Days Conditions</a>
+        <section class="nextDays__container fade-in" role="region" aria-labelledby="nextDays-title">
+          <h2 id="nextDays-title" class="nextDays-title offscreen">Next Days Forecast</h2>
+          <span class="desk-nextDays">Next Days</span>
+          <div class="nextDays" id="nextDaysContainer"></div>
+        </section>
+    </section>
+
+    <template id="templateNextDays">
+      <div class="nextDay__container" id="nextDayContainer">
+        <span class="nextDay-day" id="nextDay"></span>
+        <div class="nextDayDescription__container">
+          <img class="nextDay__icon" alt="weather next days" id="nextDayIcon" />
+          <span class="nextDay__description" id="nextDayDescription"></span>
+        </div>
+        <div class="maxmin__container">
+          <span class="temperature-max" id="maxTemp"></span>
+          <span class="temperature-min" id="minTemp"></span>
+        </div>
+      </div>
+    </template>
+
+    <template id="templateWeatherToday">
+      <div class="weatherToday__container" id="weatherTodayContainer">
+        <span class="weatherToday__subtitle" id="weatherTodaySubtitle"></span>
+        <img
+          class="weatherToday__icon"
+          src=""
+          alt="weather icon"
+          id="weatherTodayIcon"
+        />
+        <span
+          class="weatherToday__description"
+          id="weatherTodayDescription"
+        ></span>
+      </div>
+    </template>
+    <script src="../scripts/app.js" type="module"></script>
+  </body>
+</html>
