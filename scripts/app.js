@@ -29,10 +29,17 @@ document.body.addEventListener("submit", (e) => {
   if (e.target.id === "searchForm") {
     e.preventDefault();
     const searchInput = document.querySelector("#searchInput");
+    //mejorar
+    while(document.getElementById('infoTodayContainer').firstElementChild) {
+      document.getElementById('infoTodayContainer').firstElementChild.remove()
+    }
+    while(document.getElementById('nextHoursContainer').firstElementChild) {
+      document.getElementById('nextHoursContainer').firstElementChild.remove()
+    }
+    
     getWeatherData(searchInput.value);
   }
 });
-
 window.onload = () => {
   getWeatherData("Salto");
   const classThunder = document.getElementById('weatherIcon').classList.contains('thunderstorm');
