@@ -7,12 +7,12 @@ import sunny from "../components/animations/sunny.js";
 import cloudy from "../components/animations/cloudy.js";
 
 const main = (data) => {
-  document.getElementById('weatherIcon').className = data.current.condition.text;
+  document.getElementById('weatherIcon').className = data.current.condition.code;
   const d = document.getElementById('weatherIcon').classList;
-  const classThunder = d.contains('Thunderstorm');
-  const classRainn = d.contains('Rain');
-  const classSunny = d.contains('Sunny');
-  const classCloudy = d.contains('Cloudy') || d.contains('Fog');
+  const classThunder = d.contains(1087) || d.contains(1273) || d.contains(1276) || d.contains(1279) || d.contains(1282);
+  const classRainn = d.contains(1180) || d.contains(1063) || d.contains(1183) || d.contains(1186) || d.contains(1189) || d.contains(1192) || d.contains(1195) || d.contains(1198) || d.contains(1201) || d.contains(1240) || d.contains(1243) || d.contains(1246);
+  const classSunny = d.contains(1000);
+  const classCloudy = d.contains(1006) || d.contains(1135) || d.contains(1003) || d.contains(1009) || d.contains(1030);
   if(!!classRainn) {
     rain()
     document.getElementById('weatherIcon').src = '../../public/img/images/rain.png'
