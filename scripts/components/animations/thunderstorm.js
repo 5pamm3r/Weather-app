@@ -5,8 +5,8 @@ const container = document.getElementById("backAnimate");
 const thunderstorm = () => {
   const img = document.createElement("img");
   const img2 = document.createElement('img');
-  img.src = "../../public/img/images/lightning-2.png";
-  img2.src = '../../public/img/images/lightning.png'
+  img.src = "https://5pamm3r.github.io/umbrella/public/img/images/lightning-2.png";
+  img2.src = 'https://5pamm3r.github.io/umbrella/public/img/images/lightning.png'
   document.getElementById('mainContainer').classList.remove('rain', 'sunny', 'cloudy')
   document.getElementById('mainContainer').classList.add('thunder')
   document.getElementById('vapour').style.opacity = 1;

@@ -15,16 +15,16 @@ const main = (data) => {
   const classCloudy = d.contains(1006) || d.contains(1135) || d.contains(1003) || d.contains(1009) || d.contains(1030);
   if(!!classRainn) {
     rain()
-    document.getElementById('weatherIcon').src = '/public/img/images/rain.png'
+    document.getElementById('weatherIcon').src = 'https://5pamm3r.github.io/umbrella/public/img/images/rain.png'
   } else if(!!classThunder) {
     thunderstorm()
-    document.getElementById('weatherIcon').src = '/public/img/images/thunderstorm.png'
+    document.getElementById('weatherIcon').src = 'https://5pamm3r.github.io/umbrella/public/img/images/thunderstorm.png'
   } else if(!!classSunny) {
     sunny()
-    document.getElementById('weatherIcon').src = '/public/img/images/sunny.png'
+    document.getElementById('weatherIcon').src = 'https://5pamm3r.github.io/umbrella/public/img/images/sunny.png'
   } else if(!!classCloudy) {
     cloudy()
-    document.getElementById('weatherIcon').src = '/public/img/images/cloudy.png'
+    document.getElementById('weatherIcon').src = 'https://5pamm3r.github.io/umbrella/public/img/images/cloudy.png'
   }
 
   document.querySelector("#location").textContent =
@@ -38,17 +38,17 @@ const main = (data) => {
     data.location.localtime_epoch * 1000
   ).toLocaleString("en-EN", { dateStyle: "medium" });
   todayContainer(
-    "/public/img/icons/wind.png",
+    "https://5pamm3r.github.io/umbrella/public/img/icons/wind.png",
     `${data.current.wind_kph} km/h`,
     "Wind speed"
   );
   todayContainer(
-    "/public/img/icons/humidity.png",
+    "https://5pamm3r.github.io/umbrella/public/img/icons/humidity.png",
     `${data.current.humidity} %`,
     "Humidity"
   );
   todayContainer(
-    "/public/img/icons/rain-v.png",
+    "https://5pamm3r.github.io/umbrella/public/img/icons/rain-v.png",
     data.current.precip_mm,
     "Precip. mm"
   );
