@@ -12,10 +12,10 @@ export const nextHours = async (city, country) => {
       }
     );
     const data = await res.json();
-    nextHoursContainer('https://img.icons8.com/color/48/undefined/rain--v1.png', Math.floor(data.locations[`${city},${country}`].values[3].temp), new Date(data.locations[`${city},${country}`].values[3].datetime).getHours())
-    nextHoursContainer('https://img.icons8.com/color/48/undefined/rain--v1.png', Math.floor(data.locations[`${city},${country}`].values[6].temp), new Date(data.locations[`${city},${country}`].values[6].datetime).getHours())
-    nextHoursContainer('https://img.icons8.com/color/48/undefined/rain--v1.png', Math.floor(data.locations[`${city},${country}`].values[9].temp), new Date(data.locations[`${city},${country}`].values[9].datetime).getHours())
-    nextHoursContainer('https://img.icons8.com/color/48/undefined/rain--v1.png', Math.floor(data.locations[`${city},${country}`].values[12].temp), new Date(data.locations[`${city},${country}`].values[12].datetime).getHours())
+    nextHoursContainer('https://5pamm3r.github.io/umbrella/public/img/images/sunny.png', Math.floor(data.locations[`${city},${country}`].values[3].temp), new Date(data.locations[`${city},${country}`].values[3].datetime).getHours())
+    nextHoursContainer('https://5pamm3r.github.io/umbrella/public/img/images/cloudy.png', Math.floor(data.locations[`${city},${country}`].values[6].temp), new Date(data.locations[`${city},${country}`].values[6].datetime).getHours())
+    nextHoursContainer('https://5pamm3r.github.io/umbrella/public/img/images/cloudy.png', Math.floor(data.locations[`${city},${country}`].values[9].temp), new Date(data.locations[`${city},${country}`].values[9].datetime).getHours())
+    nextHoursContainer('https://5pamm3r.github.io/umbrella/public/img/images/cloudy.png', Math.floor(data.locations[`${city},${country}`].values[12].temp), new Date(data.locations[`${city},${country}`].values[12].datetime).getHours())
     document.querySelector('#nextHoursContainer').append(fragmentNextHours)
   } catch (error) {
     console.error(error)
