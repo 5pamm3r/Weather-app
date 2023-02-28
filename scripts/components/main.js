@@ -7,22 +7,28 @@ import sunny from "../components/animations/sunny.js";
 import cloudy from "../components/animations/cloudy.js";
 
 const main = (data) => {
+  while (document.querySelector("#backAnimate").firstElementChild) {
+    document.querySelector("#backAnimate").firstElementChild.remove();
+  }
   document.getElementById('weatherIcon').className = data.current.condition.code;
   const d = document.getElementById('weatherIcon').classList;
   const classThunder = d.contains(1087) || d.contains(1273) || d.contains(1276) || d.contains(1279) || d.contains(1282);
-  const classRainn = d.contains(1180) || d.contains(1063) || d.contains(1183) || d.contains(1186) || d.contains(1189) || d.contains(1192) || d.contains(1195) || d.contains(1198) || d.contains(1201) || d.contains(1240) || d.contains(1243) || d.contains(1246);
+  const classRain = d.contains(1180) || d.contains(1063) || d.contains(1183) || d.contains(1186) || d.contains(1189) || d.contains(1192) || d.contains(1195) || d.contains(1198) || d.contains(1201) || d.contains(1240) || d.contains(1243) || d.contains(1246);
   const classSunny = d.contains(1000);
   const classCloudy = d.contains(1006) || d.contains(1135) || d.contains(1003) || d.contains(1009) || d.contains(1030);
-  if(!!classRainn) {
+  if(!!classRain) {
     rain()
     document.getElementById('weatherIcon').src = 'https://5pamm3r.github.io/umbrella/public/img/images/rain.png'
   } else if(!!classThunder) {
+    document.getElementById('backAnimate').className = 'back__animate'
     thunderstorm()
     document.getElementById('weatherIcon').src = 'https://5pamm3r.github.io/umbrella/public/img/images/thunderstorm.png'
   } else if(!!classSunny) {
+    document.getElementById('backAnimate').className = 'back__animate'
     sunny()
     document.getElementById('weatherIcon').src = 'https://5pamm3r.github.io/umbrella/public/img/images/sunny.png'
   } else if(!!classCloudy) {
+    document.getElementById('backAnimate').className = 'back__animate'
     cloudy()
     document.getElementById('weatherIcon').src = 'https://5pamm3r.github.io/umbrella/public/img/images/cloudy.png'
   }
