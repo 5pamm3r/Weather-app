@@ -43,3 +43,9 @@
     }
   }
 }
+
+@include mqMax(425px) {
+  .nextDays__container {
+    font-size: var(--font-box-mobile);
+  }
+}
