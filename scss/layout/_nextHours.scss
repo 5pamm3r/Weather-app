@@ -24,6 +24,7 @@
   }
   .nextHour__container {
     @include flexCenter;
+    font-size: var(--font-box);
     gap: 5px;
     flex-direction: column;
     border: 1px solid darkgray;
@@ -38,5 +39,11 @@
     .weatherToday__icon {
       width: 40px;
     }
+  }
+}
+
+@include mqMax(425px) {
+  .nextHours__container .nextHour__container {
+    font-size: var(--font-box-mobile);
   }
 }
