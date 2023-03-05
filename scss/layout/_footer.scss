@@ -37,3 +37,19 @@
     }
   }
 }
+
+@include mqMax(425px) {
+  .footer__container {
+    .back__button {
+      font-size: var(--font-buttons-mobile);
+    }
+    .footerSubtitle__container {
+      .footer__today {
+        font-size: var(--font-subtitle-mobile);
+      }
+      .footer__nextDays {
+        font-size: var(--font-buttons-mobile);
+      }
+    }
+  } 
+}
