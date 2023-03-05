@@ -18,3 +18,12 @@
     }
   }
 }
+
+@include mqMax(425px) {
+  .infoToday__container {
+    font-size: 1.4rem;
+    .weatherToday__container img {
+      width: 40px;
+    }
+  }
+}
