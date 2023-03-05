@@ -28,3 +28,9 @@
     font-size: 4rem;
   }
 }
+
+@include mqMax(425px) {
+  .location__container .location {
+    font-size: 3rem;
+  }
+}
