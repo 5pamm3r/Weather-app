@@ -12,7 +12,7 @@ export const nextHours = async (city, country) => {
     const getCoord = async (city, country) => {
       try{
     
-        const res = await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${city},${country}&limit=5&appid=8d9eeb8926ac32c224c151d4599f79b6`)
+        const res = await fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${city},${country}&limit=5&appid=8d9eeb8926ac32c224c151d4599f79b6`)
         const data = await res.json()
         getWeather(data[0].lat, data[0].lon)
       }
