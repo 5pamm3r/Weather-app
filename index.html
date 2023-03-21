@@ -18,6 +18,27 @@
       referrerpolicy="no-referrer"
     />
     <title>Weather-app</title>
+
+    <link rel="manifest" href="./manifest.json">
+    <!----METAS DE PWA-->
+    <meta name="theme-color" content="#2F3BA2">
+    <meta name="MobileOptimized" content="width">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="shortcut icon" type="image/png" href="./public/pwa/icons/icon-512x512.png">
+    <link rel="apple-touch-icon" href="./public/pwa/icons/icon-512x512.png">
+    <link rel="apple-touch-startup-image" href="./public/pwa/icons/icon-512x512.png">
+
+    <link rel="apple-touch-icon" href="./public/pwa/icons/icon-72x72.png" />
+    <link rel="apple-touch-icon" href="./public/pwa/icons/icon-96x96.png" />
+    <link rel="apple-touch-icon" href="./public/pwa/icons/icon-128x128.png" />
+    <link rel="apple-touch-icon" href="./public/pwa/icons/icon-144x144.png" />
+    <link rel="apple-touch-icon" href="./public/pwa/icons/icon-152x152.png" />
+    <link rel="apple-touch-icon" href="./public/pwa/icons/icon-192x192.png" />
+    <link rel="apple-touch-icon" href="./public/pwa/icons/icon-384x384.png" />
+    <link rel="apple-touch-icon" href="./public/pwa/icons/icon-512x512.png" />
+    <meta name="apple-mobile-web-app-status-bar" content="#db4938" />
   </head>
   <body>
     <section class="app fade-in">
@@ -105,5 +126,6 @@
       </div>
     </template>
     <script src="./scripts/app.js" type="module"></script>
+    <script src="./register_serviceWorker.js"></script>
   </body>
 </html>
