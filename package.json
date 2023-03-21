@@ -1,5 +1,5 @@
 {
-  "type": "module",
+  "type": "commonjs",
   "scripts": {
     "scss": "node-sass --watch style/style.scss -o style.css",
     "start": "live-server"
